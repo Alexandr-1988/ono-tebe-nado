@@ -12,20 +12,22 @@ input::-moz-focus-inner {
 }
 
 .header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 0;
   font-size: 18px;
   font-weight: 400;
 }
 
 .header__menu {
-  display: flex;
-  padding: 92px 49px 92px 51px;
+  margin-left: 51px;
+  align-items: center;
+  align-self: center;
 }
 
 .header__menu-list {
   display: flex;
-  margin-right: 215px;
   list-style: circle;
-  align-items: center;
   gap: 32px;
 }
 
@@ -33,44 +35,45 @@ input::-moz-focus-inner {
   list-style: none;
 }
 
-.header__menu-link-active {
-  text-decoration: none;
-}
-
 .header__menu-link {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
+.header__menu-link-active {
+  text-decoration: none;
+}
+
 .header__logo {
   display: block;
+  justify-self: center;
+  margin-top: 92px;
+  margin-bottom: 92px;
 }
 
 .header__logo-image-black {
-  width: 140px;
+  width: 139px;
 }
 
-.header__address {
-  margin-left: 355px;
-  margin-bottom: 7px;
-  margin-top: 5px;
+.address {
+  max-width: 240px;
+  font-size: 18px;
+  line-height: 24.3px;
+}
+
+.address_place_header {
+  justify-self: end;
+  align-self: center;
+  margin-right: 49px;
 }
 
 .header__address-list {
-  list-style: none;
-}
-
-.header__address-item {
   line-height: 24.3px;
 }
 
 .header__address-item-link {
+  display: block;
   font-style: normal;
-}
-
-.header__address-item a {
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
 .cover {
@@ -84,7 +87,7 @@ input::-moz-focus-inner {
 .overlay {
   position: absolute;
   background-color: black;
-  opacity: 0.4;
+  opacity: 0.6;
   width: 100%;
   height: 100%;
 }
@@ -92,7 +95,6 @@ input::-moz-focus-inner {
 .cover__title {
   position: relative;
   color: #fff;
-  font-family: Raleway;
   font-size: 100px;
   font-style: normal;
   font-weight: 700;
@@ -115,6 +117,14 @@ input::-moz-focus-inner {
   letter-spacing: 30px;
 }
 
+.accent-span-nol {
+  letter-spacing: 35px;
+}
+
+.text-left {
+  margin-bottom: -10px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -122,14 +132,11 @@ input::-moz-focus-inner {
 .text-right {
   display: block;
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .accent-span.text-center {
-  margin-top: 20px;
-}
-
-.accent-span.text-right {
+  margin-top: 23px;
 }
 
 .cover__subtitle {
@@ -138,16 +145,13 @@ input::-moz-focus-inner {
   font-weight: 400;
   line-height: 28px;
   text-transform: uppercase;
-  word-spacing: 15px;
+  word-spacing: 18px;
 }
 
-.cover_text_button {
+.cover__description {
   position: relative;
   z-index: 2;
   padding-bottom: 50px;
-}
-
-.cover_text_button {
   display: flex;
   justify-content: end;
   margin-right: 50px;
@@ -162,13 +166,12 @@ input::-moz-focus-inner {
   font-size: 22px;
   color: #fff;
   text-decoration: none;
-  font-size: 22px;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 .lots {
-  margin-top: 180px;
+  margin-top: 178px;
   padding-right: 50px;
   padding-left: 50px;
 }
@@ -182,13 +185,13 @@ input::-moz-focus-inner {
 }
 
 .lots__card-list {
+  display: flex;
   list-style: none;
   margin-bottom: 30px;
+  gap: 25px;
 }
 
 .lots__card-list-item {
-  display: flex;
-  gap: 25px;
   min-width: 430px;
   min-height: 450px;
 }
@@ -202,6 +205,8 @@ input::-moz-focus-inner {
   min-width: 430px;
   height: 450px;
   z-index: -2;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card_content {
@@ -210,20 +215,14 @@ input::-moz-focus-inner {
 
 .card_type_film {
   background-image: url("../images/card-lot-01.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .card_type_book {
   background-image: url("../images/card-lot-02.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .card_type_picture {
   background-image: url("../images/card-lot-03.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .card__title {
@@ -261,6 +260,8 @@ input::-moz-focus-inner {
   margin-left: 40px;
   font-size: 20px;
   font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .about {
@@ -270,6 +271,7 @@ input::-moz-focus-inner {
   margin-top: 181px;
   padding-left: 50px;
   padding-right: 50px;
+  margin-bottom: 180px;
 }
 
 .about__logo {
@@ -308,28 +310,32 @@ input::-moz-focus-inner {
   gap: 25px;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address_place_footer {
+  margin-left: 50px;
+  margin-bottom: 90px;
+  line-height: 24.3px;
+}
+
 .footer__menu {
   display: flex;
   justify-content: space-between;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-top: 180px;
-  margin-bottom: 90px;
 }
 
 .footer__address-list {
-  list-style: none;
-}
-
-.footer__address-item {
   line-height: 24.3px;
 }
 
 .footer__address-item-link {
+  display: block;
   font-style: normal;
 }
 
-.footer__address-item a {
+.underline {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -337,14 +343,10 @@ input::-moz-focus-inner {
 .footer__menu-list {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  font-size: 18px;
   list-style: none;
   align-items: center;
   text-align: center;
-}
-
-.footer__menu-link-active {
-  text-decoration: none;
 }
 
 .footer__menu-link {
@@ -352,10 +354,15 @@ input::-moz-focus-inner {
   text-underline-offset: 4px;
 }
 
+.footer__menu-link_active {
+  text-decoration: none;
+}
+
 .footer__social-list {
   list-style: none;
   display: flex;
-  gap: 50px;
+  gap: 48px;
+  margin-right: 50px;
 }
 
 .footer__social-icon {
